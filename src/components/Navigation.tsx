@@ -16,9 +16,18 @@ const Navigation = () => {
   const scrollToSection = (sectionId: string) => {
     setActiveSection(sectionId);
     setIsMobileMenuOpen(false); // Close mobile menu when navigating
+    
+    if (sectionId === "home") {
+      // Scroll to top for home
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+    
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      const navHeight = 80; // Account for fixed navigation
+      const elementPosition = element.offsetTop - navHeight;
+      window.scrollTo({ top: elementPosition, behavior: "smooth" });
     }
   };
 
