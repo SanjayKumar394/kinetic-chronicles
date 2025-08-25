@@ -75,21 +75,21 @@ const Contact = () => {
             </p>
           </motion.div>
 
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
+          <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
             {/* Contact Information */}
-            <motion.div variants={itemVariants} className="space-y-6 lg:space-y-8">
+            <motion.div variants={itemVariants} className="space-y-4 sm:space-y-6 lg:space-y-8">
               <div>
-                <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4 lg:mb-6">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-3 sm:mb-4 lg:mb-6">
                   Get in Touch
                 </h3>
-                <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-6 lg:mb-8">
+                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4 sm:mb-6 lg:mb-8">
                   I'm always open to discussing new opportunities, creative projects, 
                   or just having a friendly chat about technology and development.
                 </p>
               </div>
 
               {/* Contact Methods */}
-              <div className="space-y-4 lg:space-y-6">
+              <div className="space-y-3 sm:space-y-4 lg:space-y-6">
                 {[
                   {
                     icon: Mail,
@@ -114,14 +114,14 @@ const Contact = () => {
                     key={index}
                     href={contact.action}
                     whileHover={{ x: 10 }}
-                    className="flex items-center space-x-3 lg:space-x-4 p-3 lg:p-4 glass rounded-lg hover:shadow-neon transition-all duration-300 group"
+                    className="flex items-center space-x-2 sm:space-x-3 lg:space-x-4 p-2.5 sm:p-3 lg:p-4 glass rounded-lg hover:shadow-neon transition-all duration-300 group"
                   >
-                    <div className="p-2 lg:p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
-                      <contact.icon className="w-4 h-4 lg:w-6 lg:h-6 text-primary" />
+                    <div className="p-1.5 sm:p-2 lg:p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors flex-shrink-0">
+                      <contact.icon className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-primary" />
                     </div>
-                    <div>
-                      <div className="text-xs lg:text-sm text-muted-foreground">{contact.label}</div>
-                      <div className="text-sm lg:text-base text-foreground font-medium">{contact.value}</div>
+                    <div className="min-w-0 flex-1">
+                      <div className="text-xs sm:text-xs lg:text-sm text-muted-foreground">{contact.label}</div>
+                      <div className="text-xs sm:text-sm lg:text-base text-foreground font-medium break-words">{contact.value}</div>
                     </div>
                   </motion.a>
                 ))}
@@ -150,19 +150,19 @@ const Contact = () => {
 
             {/* Contact Form */}
             <motion.div variants={itemVariants}>
-              <Card className="glass p-4 md:p-6 lg:p-8">
-                <h3 className="text-xl md:text-2xl font-bold gradient-text mb-4 lg:mb-6">
+              <Card className="glass p-3 sm:p-4 md:p-6 lg:p-8">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold gradient-text mb-3 sm:mb-4 lg:mb-6">
                   Send a Message
                 </h3>
                 
-                <form onSubmit={handleSubmit} className="space-y-4 lg:space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4 lg:space-y-6">
                   <div>
                     <Input
                       name="name"
                       placeholder="Your Name"
                       value={formData.name}
                       onChange={handleChange}
-                      className="bg-muted/50 border-border focus:border-primary h-10 lg:h-12 text-sm lg:text-base"
+                      className="bg-muted/50 border-border focus:border-primary h-9 sm:h-10 lg:h-12 text-xs sm:text-sm lg:text-base"
                       required
                     />
                   </div>
@@ -174,7 +174,7 @@ const Contact = () => {
                       placeholder="Your Email"
                       value={formData.email}
                       onChange={handleChange}
-                      className="bg-muted/50 border-border focus:border-primary h-10 lg:h-12 text-sm lg:text-base"
+                      className="bg-muted/50 border-border focus:border-primary h-9 sm:h-10 lg:h-12 text-xs sm:text-sm lg:text-base"
                       required
                     />
                   </div>
@@ -185,7 +185,7 @@ const Contact = () => {
                       placeholder="Your Message"
                       value={formData.message}
                       onChange={handleChange}
-                      className="bg-muted/50 border-border focus:border-primary min-h-[100px] lg:min-h-[120px] text-sm lg:text-base"
+                      className="bg-muted/50 border-border focus:border-primary min-h-[80px] sm:min-h-[100px] lg:min-h-[120px] text-xs sm:text-sm lg:text-base"
                       required
                     />
                   </div>
