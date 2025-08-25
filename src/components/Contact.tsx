@@ -75,21 +75,21 @@ const Contact = () => {
             </p>
           </motion.div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Contact Information */}
-            <motion.div variants={itemVariants} className="space-y-8">
+            <motion.div variants={itemVariants} className="space-y-6 lg:space-y-8">
               <div>
-                <h3 className="text-2xl font-bold text-foreground mb-6">
+                <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4 lg:mb-6">
                   Get in Touch
                 </h3>
-                <p className="text-muted-foreground leading-relaxed mb-8">
+                <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-6 lg:mb-8">
                   I'm always open to discussing new opportunities, creative projects, 
                   or just having a friendly chat about technology and development.
                 </p>
               </div>
 
               {/* Contact Methods */}
-              <div className="space-y-6">
+              <div className="space-y-4 lg:space-y-6">
                 {[
                   {
                     icon: Mail,
@@ -114,34 +114,34 @@ const Contact = () => {
                     key={index}
                     href={contact.action}
                     whileHover={{ x: 10 }}
-                    className="flex items-center space-x-4 p-4 glass rounded-lg hover:shadow-neon transition-all duration-300 group"
+                    className="flex items-center space-x-3 lg:space-x-4 p-3 lg:p-4 glass rounded-lg hover:shadow-neon transition-all duration-300 group"
                   >
-                    <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
-                      <contact.icon className="w-6 h-6 text-primary" />
+                    <div className="p-2 lg:p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
+                      <contact.icon className="w-4 h-4 lg:w-6 lg:h-6 text-primary" />
                     </div>
                     <div>
-                      <div className="text-sm text-muted-foreground">{contact.label}</div>
-                      <div className="text-foreground font-medium">{contact.value}</div>
+                      <div className="text-xs lg:text-sm text-muted-foreground">{contact.label}</div>
+                      <div className="text-sm lg:text-base text-foreground font-medium">{contact.value}</div>
                     </div>
                   </motion.a>
                 ))}
               </div>
 
               {/* Social Links */}
-              <div className="pt-8">
-                <h4 className="text-lg font-semibold text-foreground mb-4">
+              <div className="pt-6 lg:pt-8">
+                <h4 className="text-base lg:text-lg font-semibold text-foreground mb-3 lg:mb-4">
                   Follow Me
                 </h4>
-                <div className="flex space-x-4">
+                <div className="flex space-x-3 lg:space-x-4">
                   {socialLinks.map((social, index) => (
                     <motion.a
                       key={index}
                       href={social.href}
                       whileHover={{ scale: 1.1, y: -2 }}
                       whileTap={{ scale: 0.9 }}
-                      className={`p-3 glass rounded-lg transition-all duration-300 ${social.color} hover:shadow-neon`}
+                      className={`p-2.5 lg:p-3 glass rounded-lg transition-all duration-300 ${social.color} hover:shadow-neon`}
                     >
-                      <social.icon className="w-6 h-6" />
+                      <social.icon className="w-5 h-5 lg:w-6 lg:h-6" />
                     </motion.a>
                   ))}
                 </div>
@@ -150,19 +150,19 @@ const Contact = () => {
 
             {/* Contact Form */}
             <motion.div variants={itemVariants}>
-              <Card className="glass p-8">
-                <h3 className="text-2xl font-bold gradient-text mb-6">
+              <Card className="glass p-4 md:p-6 lg:p-8">
+                <h3 className="text-xl md:text-2xl font-bold gradient-text mb-4 lg:mb-6">
                   Send a Message
                 </h3>
                 
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-4 lg:space-y-6">
                   <div>
                     <Input
                       name="name"
                       placeholder="Your Name"
                       value={formData.name}
                       onChange={handleChange}
-                      className="bg-muted/50 border-border focus:border-primary"
+                      className="bg-muted/50 border-border focus:border-primary h-10 lg:h-12 text-sm lg:text-base"
                       required
                     />
                   </div>
@@ -174,7 +174,7 @@ const Contact = () => {
                       placeholder="Your Email"
                       value={formData.email}
                       onChange={handleChange}
-                      className="bg-muted/50 border-border focus:border-primary"
+                      className="bg-muted/50 border-border focus:border-primary h-10 lg:h-12 text-sm lg:text-base"
                       required
                     />
                   </div>
@@ -185,7 +185,7 @@ const Contact = () => {
                       placeholder="Your Message"
                       value={formData.message}
                       onChange={handleChange}
-                      className="bg-muted/50 border-border focus:border-primary min-h-[120px]"
+                      className="bg-muted/50 border-border focus:border-primary min-h-[100px] lg:min-h-[120px] text-sm lg:text-base"
                       required
                     />
                   </div>
@@ -196,10 +196,10 @@ const Contact = () => {
                   >
                     <Button
                       type="submit"
-                      className="w-full btn-hero"
+                      className="w-full btn-hero h-10 lg:h-12 text-sm lg:text-base"
                       size="lg"
                     >
-                      <Send className="w-5 h-5 mr-2" />
+                      <Send className="w-4 h-4 lg:w-5 lg:h-5 mr-2" />
                       Send Message
                     </Button>
                   </motion.div>
@@ -209,19 +209,19 @@ const Contact = () => {
           </div>
 
           {/* Download Resume Section */}
-          <motion.div variants={itemVariants} className="mt-16 text-center">
-            <Card className="glass p-8 max-w-2xl mx-auto">
-              <h3 className="text-2xl font-bold gradient-text mb-4">
+          <motion.div variants={itemVariants} className="mt-12 lg:mt-16 text-center">
+            <Card className="glass p-6 lg:p-8 max-w-2xl mx-auto">
+              <h3 className="text-lg md:text-xl lg:text-2xl font-bold gradient-text mb-3 lg:mb-4">
                 Interested in my work?
               </h3>
-              <p className="text-muted-foreground mb-6">
+              <p className="text-sm md:text-base text-muted-foreground mb-4 lg:mb-6">
                 Download my resume to learn more about my experience and skills
               </p>
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Button className="btn-secondary">
+                <Button className="btn-secondary px-6 py-2 lg:px-8 lg:py-3 text-sm lg:text-base">
                   Download Resume
                 </Button>
               </motion.div>
